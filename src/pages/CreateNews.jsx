@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import { createNews } from '../services/newsService';
 
 export default function CreateNews() {
   const [formData, setFormData] = useState({
@@ -21,10 +22,7 @@ export default function CreateNews() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // Заявка към бекенда
-    console.log('Нова новина:', formData, 'Автор:', auth.email);
-
-    // След създаване пренасочване към /news
+    createNews(formData, auth.email);
     navigate('/news');
   };
 

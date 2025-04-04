@@ -1,18 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getAllNews } from '../services/newsService';
 
 export default function NewsCatalog() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    // Временно фалшиви новини
-    const dummyNews = [
-      { _id: '1', title: 'Новина 1', content: 'Съдържание на новина 1' },
-      { _id: '2', title: 'Новина 2', content: 'Съдържание на новина 2' },
-      { _id: '3', title: 'Новина 3', content: 'Съдържание на новина 3' },
-    ];
-
-    setNews(dummyNews);
+    const news = getAllNews();
+    setNews(news);
   }, []);
 
   return (

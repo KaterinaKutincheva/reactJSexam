@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { getNewsById } from '../services/newsService';
+import { deleteNews } from '../services/newsService';
+
 
 export default function NewsDetails() {
     const { newsId } = useParams();
@@ -15,37 +18,13 @@ export default function NewsDetails() {
         const confirmDelete = confirm('Сигурни ли сте, че искате да изтриете тази новина?');
 
         if (confirmDelete) {
-            console.log(`Изтриване на новина с ID: ${newsId}`);
-            // Ивикване DELETE заявка към бекенда
+            deleteNews(newsId);
             navigate('/news');
         }
     };
 
-
     useEffect(() => {
-
-        const dummyNews = [
-            {
-                _id: '1',
-                title: 'Новина 1',
-                content: 'Пълно съдържание на новина 1',
-                author: 'test@test.bg'
-            },
-            {
-                _id: '2',
-                title: 'Новина 2',
-                content: 'Пълно съдържание на новина 2',
-                author: 'admin@site.com'
-            },
-            {
-                _id: '3',
-                title: 'Новина 3',
-                content: 'Пълно съдържание на новина 3',
-                author: 'test@test.bg'
-            }
-        ];
-
-        const foundNews = dummyNews.find(n => n._id === newsId);
+        const foundNews = getNewsById(newsId);
         setNewsItem(foundNews);
     }, [newsId]);
 

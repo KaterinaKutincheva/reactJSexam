@@ -9,6 +9,8 @@ import CreateNews from './pages/CreateNews'
 import { useNavigate } from 'react-router-dom';
 import NewsDetails from './pages/NewsDetails';
 import EditNews from './pages/EditNews';
+import GuestRoute from './components/GuestRoute';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   // Извличане на auth и logout от AuthContext
@@ -49,11 +51,19 @@ function App() {
       <Routes>
         <Route path="/" element={<h2>Начална страница</h2>} />
         <Route path="/news" element={<NewsCatalog />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/create" element={<CreateNews />} />
+        <Route path="/login" element={
+          <GuestRoute><Login /></GuestRoute>
+        } />
+        <Route path="/register" element={
+          <GuestRoute><Register /></GuestRoute>
+        } />
+        <Route path="/create" element={
+          <PrivateRoute><CreateNews /></PrivateRoute>
+        } />
+        <Route path="/edit/:newsId" element={
+          <PrivateRoute><EditNews /></PrivateRoute>
+        } />
         <Route path="/news/:newsId" element={<NewsDetails />} />
-        <Route path="/edit/:newsId" element={<EditNews />} />
       </Routes>
     </div>
   )

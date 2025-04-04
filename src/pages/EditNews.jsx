@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { getNewsById, updateNews } from '../services/newsService';
 
 export default function EditNews() {
   const { newsId } = useParams();
@@ -10,14 +11,7 @@ export default function EditNews() {
   });
 
   useEffect(() => {
-    // Зареждане на новината по ID (временно – фалшиви данни)
-    const dummyNews = [
-      { _id: '1', title: 'Новина 1', content: 'Пълно съдържание на новина 1' },
-      { _id: '2', title: 'Новина 2', content: 'Пълно съдържание на новина 2' },
-      { _id: '3', title: 'Новина 3', content: 'Пълно съдържание на новина 3' },
-    ];
-
-    const foundNews = dummyNews.find(n => n._id === newsId);
+    const foundNews = getNewsById(newsId);
     if (foundNews) {
       setFormData({ title: foundNews.title, content: foundNews.content });
     }
@@ -32,7 +26,7 @@ export default function EditNews() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('Обновена новина:', newsId, formData);
+    updateNews(newsId, formData);
     navigate(`/news/${newsId}`);
   };
 
