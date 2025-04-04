@@ -1,12 +1,46 @@
-# React + Vite
+# News Portal React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+Single Page Application (SPA) за публикуване на новини, изградена с React.js.  
+Приложението има публична и частна част, автентикация, routing, CRUD функционалности и защита на действията според потребителя.
 
-Currently, two official plugins are available:
+## Технологии
+- React.js + Vite
+- React Router DOM
+- Context API (автентикация)
+- useState, useEffect, useContext
+- Client-side routing с 5+ страници
+- Git + GitHub
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Структура
 
-## Expanding the ESLint configuration
+```
+src/
+├── components/       # Малки преизползваеми компоненти
+├── contexts/         # AuthContext
+├── pages/            # Всички страници: Login, Register, Catalog, Create, Details, Edit
+├── services/         # (ще се добави за реален бекенд)
+├── App.jsx           # Главен компонент и routing
+├── main.jsx          # ReactDOM и контексти
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Функционалности
+- Регистрация / Вход / Изход
+- Навигация според автентикация
+- CRUD върху новини:
+  - Каталог
+  - Детайли
+  - Създаване (само за логнати)
+  - Редакция и изтриване (само автор)
+- Route Guards (ще бъдат добавени)
+- Валидация на формите
+
+## Стартиране на проекта
+
+```bash
+npm install
+npm run dev
+```
+
+## Автор
+Катерина Георгиева Кутинчева — ReactJS Project (Април 2025)
