@@ -22,7 +22,7 @@ export default function Register() {
       return
     }
 
-    // Тук ще добавим логика за регистрация
+    // Логика за регистрация
     console.log('Регистрация:', formData)
   }
 

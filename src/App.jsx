@@ -7,6 +7,8 @@ import { AuthContext } from './contexts/AuthContext'
 import NewsCatalog from './pages/NewsCatalog'
 import CreateNews from './pages/CreateNews'
 import { useNavigate } from 'react-router-dom';
+import NewsDetails from './pages/NewsDetails';
+import EditNews from './pages/EditNews';
 
 function App() {
   // Извличане на auth и logout от AuthContext
@@ -16,7 +18,7 @@ function App() {
 
   const handleLogout = () => {
     logout();
-    navigate('/'); // връща те на начална страница
+    navigate('/'); // връщане на начална страница
   };
 
   return (
@@ -50,6 +52,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/create" element={<CreateNews />} />
+        <Route path="/news/:newsId" element={<NewsDetails />} />
+        <Route path="/edit/:newsId" element={<EditNews />} />
       </Routes>
     </div>
   )

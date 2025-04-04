@@ -21,10 +21,10 @@ export default function CreateNews() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // Тук ще пращаме заявка към бекенда
+    // Заявка към бекенда
     console.log('Нова новина:', formData, 'Автор:', auth.email);
 
-    // След създаване пренасочваме към /news
+    // След създаване пренасочване към /news
     navigate('/news');
   };
 

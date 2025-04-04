@@ -20,7 +20,7 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    // Тук можеш да направиш заявка към сървъра
+    // Заявка към сървъра
     // За тест - фалшив потребител:
     const fakeUser = {
       email: formData.email,

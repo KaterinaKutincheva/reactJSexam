@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NewsCatalog() {
   const [news, setNews] = useState([]);
@@ -22,7 +23,10 @@ export default function NewsCatalog() {
           <li key={n._id}>
             <h3>{n.title}</h3>
             <p>{n.content.substring(0, 50)}...</p>
-            <button>Детайли</button>
+            <Link to={`/news/${n._id}`}>
+              <button>Детайли</button>
+            </Link>
+
           </li>
         ))}
       </ul>
