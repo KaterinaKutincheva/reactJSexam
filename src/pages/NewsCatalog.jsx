@@ -17,6 +17,7 @@ export default function NewsCatalog() {
         {news.map(n => (
           <li key={n._id}>
             <h3>{n.title}</h3>
+            <small>Публикувана на: {new Date(n.createdAt).toLocaleDateString()}</small>
             <p>{n.content.substring(0, 50)}...</p>
             <Link to={`/news/${n._id}`}>
               <button>Детайли</button>

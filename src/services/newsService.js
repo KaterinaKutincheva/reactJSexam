@@ -33,6 +33,7 @@ let dummyNews = [
       title: data.title,
       content: data.content,
       author,
+      createdAt: new Date().toISOString(),
     };
     dummyNews.push(newItem);
   };

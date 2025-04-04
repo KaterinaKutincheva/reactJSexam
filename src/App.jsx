@@ -11,6 +11,7 @@ import NewsDetails from './pages/NewsDetails';
 import EditNews from './pages/EditNews';
 import GuestRoute from './components/GuestRoute';
 import PrivateRoute from './components/PrivateRoute';
+import './App.css';
 
 function App() {
   // Извличане на auth и logout от AuthContext

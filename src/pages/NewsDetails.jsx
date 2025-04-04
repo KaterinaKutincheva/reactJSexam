@@ -35,6 +35,7 @@ export default function NewsDetails() {
     return (
         <div>
             <h2>{newsItem.title}</h2>
+            <small>Публикувана на: {new Date(newsItem.createdAt).toLocaleDateString()}</small>
             <p>{newsItem.content}</p>
 
             {auth.email === newsItem.author && (

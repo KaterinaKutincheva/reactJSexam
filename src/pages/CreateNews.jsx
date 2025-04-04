@@ -22,6 +22,16 @@ export default function CreateNews() {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    if (!formData.title || formData.title.length < 3) {
+      alert('Заглавието трябва да е поне 3 символа.');
+      return;
+    }
+    
+    if (!formData.content || formData.content.length < 10) {
+      alert('Съдържанието трябва да е поне 10 символа.');
+      return;
+    }    
+
     createNews(formData, auth.email);
     navigate('/news');
   };
