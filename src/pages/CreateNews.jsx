@@ -6,7 +6,8 @@ import { createNews } from '../services/newsService';
 export default function CreateNews() {
   const [formData, setFormData] = useState({
     title: '',
-    content: ''
+    content: '',
+    imageUrl: ''
   });
 
   const { auth } = useContext(AuthContext);
@@ -26,11 +27,11 @@ export default function CreateNews() {
       alert('Заглавието трябва да е поне 3 символа.');
       return;
     }
-    
+
     if (!formData.content || formData.content.length < 10) {
       alert('Съдържанието трябва да е поне 10 символа.');
       return;
-    }    
+    }
 
     createNews(formData, auth.email);
     navigate('/news');
@@ -58,6 +59,17 @@ export default function CreateNews() {
             value={formData.content}
             onChange={onChange}
             required
+          />
+        </label>
+        <br />
+        <label>
+          Линк към снимка:
+          <input
+            type="text"
+            name="imageUrl"
+            value={formData.imageUrl}
+            onChange={onChange}
+            placeholder="https://..."
           />
         </label>
         <br />

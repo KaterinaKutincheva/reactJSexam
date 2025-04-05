@@ -11,7 +11,7 @@ import NewsDetails from './pages/NewsDetails';
 import EditNews from './pages/EditNews';
 import GuestRoute from './components/GuestRoute';
 import PrivateRoute from './components/PrivateRoute';
-import LatestNews from './components/LatestNews';
+import Home from './pages/Home';
 import './App.css';
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<LatestNews />} />
+        <Route path="/" element={<Home />} />
         <Route path="/news" element={<NewsCatalog />} />
         <Route path="/login" element={
           <GuestRoute><Login /></GuestRoute>

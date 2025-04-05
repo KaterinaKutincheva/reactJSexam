@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllNews } from '../services/newsService';
 import { Link } from 'react-router-dom';
-import Weather from './Weather';
 
 export default function LatestNews() {
   const [latest, setLatest] = useState([]);
@@ -15,7 +14,6 @@ export default function LatestNews() {
 
   return (
     <section>
-      <Weather />
       <h2 style={{ textAlign: 'center' }}>Последни новини</h2>
       <ul className="latest-news-list">
         {latest.map(news => (
@@ -30,12 +28,6 @@ export default function LatestNews() {
           </li>
         ))}
       </ul>
-
-      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-        <Link to="/news">
-          <button>Виж всички новини</button>
-        </Link>
-      </div>
     </section>
   );
 }

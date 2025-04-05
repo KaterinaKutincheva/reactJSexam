@@ -7,7 +7,8 @@ export default function EditNews() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
-    content: ''
+    content: '',
+    imageUrl: ''
   });
 
   useEffect(() => {
@@ -31,12 +32,12 @@ export default function EditNews() {
       alert('Заглавието трябва да е поне 3 символа.');
       return;
     }
-    
+
     if (!formData.content || formData.content.length < 10) {
       alert('Съдържанието трябва да е поне 10 символа.');
       return;
     }
-    
+
     updateNews(newsId, formData);
     navigate(`/news/${newsId}`);
   };
@@ -61,6 +62,17 @@ export default function EditNews() {
             name="content"
             value={formData.content}
             onChange={onChange}
+          />
+        </label>
+        <br />
+        <label>
+          Линк към снимка:
+          <input
+            type="text"
+            name="imageUrl"
+            value={formData.imageUrl}
+            onChange={onChange}
+            placeholder="https://..."
           />
         </label>
         <br />
