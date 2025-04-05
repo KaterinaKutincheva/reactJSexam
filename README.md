@@ -1,4 +1,4 @@
-# News Portal React App
+# News Portal React App - KNews 24/7
 
 ## Описание
 Single Page Application (SPA) за публикуване на новини, изградена с React.js.  

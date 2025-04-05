@@ -11,6 +11,7 @@ import NewsDetails from './pages/NewsDetails';
 import EditNews from './pages/EditNews';
 import GuestRoute from './components/GuestRoute';
 import PrivateRoute from './components/PrivateRoute';
+import LatestNews from './components/LatestNews';
 import './App.css';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <h1>News Portal</h1>
+      <h1>KNews 24/7</h1>
       <h2>Добре дошли в нашия новинарски портал!</h2>
       <nav>
         <ul>
@@ -50,7 +51,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<h2>Начална страница</h2>} />
+        <Route path="/" element={<LatestNews />} />
         <Route path="/news" element={<NewsCatalog />} />
         <Route path="/login" element={
           <GuestRoute><Login /></GuestRoute>
