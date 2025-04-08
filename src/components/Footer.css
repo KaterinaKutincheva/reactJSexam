@@ -1,0 +1,9 @@
+.site-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }

@@ -12,6 +12,8 @@ import EditNews from './pages/EditNews';
 import GuestRoute from './components/GuestRoute';
 import PrivateRoute from './components/PrivateRoute';
 import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -27,29 +29,7 @@ function App() {
 
   return (
     <div>
-      <h1>KNews 24/7</h1>
-      <h2>Добре дошли в нашия новинарски портал!</h2>
-      <nav>
-        <ul>
-          <li><Link to="/">Начало</Link></li>
-          <li><Link to="/news">Новини</Link></li>
-
-          {!auth.email && (
-            <>
-              <li><Link to="/login">Вход</Link></li>
-              <li><Link to="/register">Регистрация</Link></li>
-            </>
-          )}
-
-          {auth.email && (
-            <>
-              <li><Link to="/create">Създай новина</Link></li>
-              <li><button onClick={handleLogout}>Изход</button></li>
-            </>
-          )}
-        </ul>
-      </nav>
-
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<NewsCatalog />} />
@@ -67,6 +47,7 @@ function App() {
         } />
         <Route path="/news/:newsId" element={<NewsDetails />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
