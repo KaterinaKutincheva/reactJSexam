@@ -5,7 +5,7 @@ let dummyNews = [
     content: 'Пълно съдържание на новина 1. Малко повече текст за видимост.',
     author: 'test@test.bg',
     createdAt: new Date().toISOString(),
-    imageUrl: 'https://drive.google.com/thumbnail?id=1zE-Fcv-lqE7YYPMlnLnmX6Q754F5bP1Z'
+    imageUrl: 'https://dl.dropboxusercontent.com/scl/fi/8fiovddnsikop7x1qsq90/news1.jpg?rlkey=5by48la5pop4wungtdnbyasgu'
   },
   {
     _id: '2',
@@ -13,7 +13,7 @@ let dummyNews = [
     content: 'Пълно съдържание на новина 2. Тук също добавяме примерен текст.',
     author: 'admin@site.com',
     createdAt: new Date().toISOString(),
-    imageUrl: 'https://drive.google.com/thumbnail?id=13-wm8ki0HzbqnnacAnSy2N5pZVLutqkJ'
+    imageUrl: 'https://dl.dropboxusercontent.com/scl/fi/v0zsrw0gm02y7zpa4zjs4/news3.jpg?rlkey=wihen2g3i8ng5ybb01j10jtte'
   },
   {
     _id: '3',
